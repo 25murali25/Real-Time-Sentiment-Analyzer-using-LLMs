@@ -1,6 +1,13 @@
 from groq import Groq
-from env import api_key_used
+from dotenv import load_dotenv
 from Prompt import prompt
+import os
+
+load_dotenv()
+
+
+api_key = os.getenv("GROQ_API_KEY")
+
 
 client = Groq(api_key=api_key_used)
 
